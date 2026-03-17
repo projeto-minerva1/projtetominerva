@@ -8,34 +8,102 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh ;
+    min-height: 100vh;
     background: url('./img/img.jpg');
-    background-size: cover; 
+    background-size: cover;
     background-position: center;
 }
 
+.wrapper {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
 .left-container {
     width: 50%;
-    height: 100vh;
-    background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
-    border-radius: 12px;
-    border-right: none;
+    position: relative;
+    background: url('./img/img.jpg') center/cover no-repeat;
+    border-right: 2px solid rgba(255, 255, 255, .2);
+    overflow: hidden;
+}
+
+.left-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(38, 38, 64, 0.55) 0%, rgba(18, 18, 31, 0.9) 85%);
+}
+
+.left-content {
+    position: relative;
+    height: 100%;
+    padding: 40px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.left-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.back-link {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 10px 14px;
+    border-radius: 999px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.back-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+.left-hero h2 {
+    font-size: 32px;
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 320px;
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.dot.active {
+    background: rgba(255, 255, 255, 0.95);
 }
 
 .container {
     width: 50%;
-    height: 100vh;
-    margin-left: 0%;
     background-color: rgba(32, 30, 43, 1);
-    border: 2px solid rgba(255, 255, 255, .2);
-    border-radius: 0;
     color: #fff;
     padding: 30px 40px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
